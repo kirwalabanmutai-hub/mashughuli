@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(\\(Get-Content \"c:\\\\Users\\\\DELL XPS 13\\\\OneDrive\\\\Desktop\\\\ALL IN ONE CODING\\\\highschoolfolder1\\\\gallery.html\" -Tail 30\\))"
+    ]
+  }
+}

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parents Zone — St. Francis Girls' Secondary School, Suwerwa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="high.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    /* Parents Zone custom layout */
+     .sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+  transform: translateY(-100%);
+  transition: transform 0.9s;
+}
+.sticky-header.visible {
+  transform: translateY(0);
+}
+.sticky-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sticky-logo .logo-placeholder {
+  width: 44px;
+  height: 44px;
+  font-size: 14px;
+}
+.sticky-logo span {
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+.sticky-nav {
+  display: flex;
+  gap: 4px;
+}
+.sticky-nav a {
+  color: #c8d6e8;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 8px 14px;
+  transition: color .2s;
+}
+.sticky-nav a:hover {
+  color: var(--gold);
+}
+    .pz-section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+    }
+    .pz-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+    .pz-intro p {
+      font-size: 1.05rem;
+      color: #5a5a5a;
+      line-height: 1.75;
+    }
+
+    /* Two-card grid */
+    .pz-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Card base */
+    .pz-card {
+      border-radius: 16px;
+      padding: 2.8rem 2.4rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Card 1 — Zeraki (navy) */
+    .pz-card-primary {
+      background: #0a1f3c;
+      color: #fff;
+    }
+    .pz-card-primary .pz-icon {
+      font-size: 3.2rem;
+      color: #c9990a;
+      margin-bottom: 1.2rem;
+    }
+    .pz-card-primary h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .pz-card-primary .pz-subtitle {
+      font-size: 0.95rem;
+      color: #aab8d4;
+      margin-bottom: 1.3rem;
+      line-height: 1.55;
+    }
+    .pz-card-primary .pz-desc {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+    .btn-zeraki {
+      display: inline-block;
+      padding: 16px 36px;
+      background: #c9990a;
+      color: #0a1f3c;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 8px;
+      text-align: center;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+      border: 2px solid #c9990a;
+    }
+    .btn-zeraki:hover {
+      background: transparent;
+      color: #c9990a;
+      transform: translateY(-2px);
+    }
+    .pz-card-primary .pz-note {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: #8faac5;
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .pz-card-primary .pz-note i {
+      color: #c9990a;
+      margin-right: 5px;
+    }
+
+    /* Card 2 — Resources (cream) */
+    .pz-card-secondary {
+      background: #fdf8f1;
+      color: #0a1f3c;
+      border: 1px solid #e0d5c0;
+    }
+    .pz-card-secondary .pz-icon {
+      font-size: 2.4rem;
+      color: #0a1f3c;
+      margin-bottom: 1.2rem;
+    }
+    .pz-card-secondary h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0a1f3c;
+      margin-bottom: 0.5rem;
+    }
+    .pz-card-secondary .pz-subtitle {
+      font-size: 0.92rem;
+      color: #5a5a5a;
+      margin-bottom: 1.6rem;
+      line-height: 1.55;
+    }
+
+    /* Resource links */
+    .pz-resource-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.6rem;
+      flex-grow: 1;
+    }
+    .pz-resource-list li {
+      border-bottom: 1px solid #e0d5c0;
+    }
+    .pz-resource-list li:last-child {
+      border-bottom: none;
+    }
+    .pz-resource-list li a,
+    .pz-resource-list li .pz-resource-plain {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 0.6rem;
+      text-decoration: none;
+      color: #0a1f3c;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .pz-resource-list li a:hover {
+      color: #c9990a;
+      padding-left: 1rem;
+    }
+    .pz-resource-list li a i,
+    .pz-resource-list li .pz-resource-plain i {
+      width: 32px;
+      height: 32px;
+      background: #0a1f3c;
+      color: #c9990a;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .pz-resource-list li a:hover i {
+      background: #c9990a;
+      color: #0a1f3c;
+    }
+    .pz-resource-plain {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 0.6rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #0a1f3c;
+      cursor: default;
+    }
+    .pz-resource-plain .res-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .pz-resource-plain .res-label {
+      color: #5a5a5a;
+      font-size: 0.78rem;
+      font-weight: 400;
+    }
+    .pz-resource-plain .res-value {
+      font-weight: 600;
+      color: #0a1f3c;
+      font-size: 0.9rem;
+    }
+
+    /* Important notice box */
+    .pz-notice {
+      background: #0a1f3c;
+      border-radius: 12px;
+      padding: 2rem 2.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.4rem;
+      color: #fff;
+    }
+    .pz-notice-icon {
+      font-size: 2rem;
+      color: #c9990a;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .pz-notice-content h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #c9990a;
+      margin-bottom: 0.55rem;
+    }
+    .pz-notice-content p {
+      font-size: 0.93rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 768px) {
+      .pz-grid {
+        grid-template-columns: 1fr;
+      }
+      .pz-section {
+        padding: 40px 20px 60px;
+      }
+      .pz-notice {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>
+    <a href="tel:+254542031498"><i class="fas fa-phone"></i> +254 054 2031498</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="mailto:info@sfgssuwerwa.sc.ke"><i class="fas fa-envelope"></i> info@sfgssuwerwa.sc.ke</a>
+  </div>
+  <div class="topbar-socials">
+    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="sticky-logo">
+    <img src="logo.jpeg" alt="School Logo" class="logo-placeholder">
+    <span>St. Francis Girls</span>
+  </div>
+  <ul class="nav-menu" id="desktopNav">
+    <li><a href="highhome.html">Home</a></li>
+    <li>
+      <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
+        <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
+        <li><a href="vision.html"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
+        <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
+        <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
+        <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
+        <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
+        <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+        <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+        <li><a href="games.html"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
+        <li><a href="clubs.html"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
+        <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+        <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Academics <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="senior-secondary.html"><i class="fas fa-graduation-cap"></i> Senior Secondary (Grade 10)</a></li>
+        <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Our Teachers</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Admission <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="adm-overview.html"><i class="fas fa-info-circle"></i> Overview</a></li>
+        <li><a href="criteria.html"><i class="fas fa-clipboard-list"></i> Admission Criteria</a></li>
+        <li><a href="terms.html"><i class="fas fa-calendar-alt"></i> Term Dates</a></li>
+        <li><a href="fee.html"><i class="fas fa-money-bill-wave"></i> Fee Payment</a></li>
+        <li><a href="apply.html"><i class="fas fa-file-alt"></i> How to Apply</a></li>
+      </ul>
+    </li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="parents-zone.html">Parents Zone</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-phone"><i class="fas fa-phone"></i> +254 054 2031498</div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- MOBILE NAV DRAWER -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <span>St. Francis Girls</span>
+    <button class="mobile-close" id="mobileClose"></button>
+  </div>
+  <ul>
+    <li><a href="highhome.html"> Home</a></li>
+    <li><a href="#"> About Us</a></li>
+    <li><a href="profile.html" class="mobile-sub"><i class="fas fa-id-card"></i> Our Profile</a></li>
+    <li><a href="history.html" class="mobile-sub"><i class="fas fa-bookmark"></i> Our History</a></li>
+    <li><a href="vision.html" class="mobile-sub"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
+    <li><a href="administration.html" class="mobile-sub"><i class="fas fa-users"></i> School Administration</a></li>
+    <li><a href="board-members.html" class="mobile-sub"><i class="fas fa-user-tie"></i> Board Members</a></li>
+    <li><a href="policies.html" class="mobile-sub"><i class="fas fa-shield"></i> School Policies</a></li>
+    <li><a href="anthem.html" class="mobile-sub"><i class="fas fa-music"></i> School Anthem</a></li>
+    <li><a href="news.html" class="mobile-sub"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+    <li><a href="noticeboard.html" class="mobile-sub"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+    <li><a href="games.html" class="mobile-sub"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
+    <li><a href="clubs.html" class="mobile-sub"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
+    <li><a href="alumni.html" class="mobile-sub"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+    <li><a href="kcse.html" class="mobile-sub"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+    <li><a href="#"> Academics</a></li>
+    <li><a href="senior-secondary.html" class="mobile-sub"><i class="fas fa-graduation-cap"></i> Senior Secondary (Grade 10)</a></li>
+    <li><a href="teachers.html" class="mobile-sub"><i class="fas fa-chalkboard-teacher"></i> Our Teachers</a></li>
+    <li><a href="#"> Admission</a></li>
+    <li><a href="adm-overview.html" class="mobile-sub"><i class="fas fa-info-circle"></i> Overview</a></li>
+    <li><a href="criteria.html" class="mobile-sub"><i class="fas fa-clipboard-list"></i> Admission Criteria</a></li>
+    <li><a href="terms.html" class="mobile-sub"><i class="fas fa-calendar-alt"></i> Term Dates</a></li>
+    <li><a href="fee.html" class="mobile-sub"><i class="fas fa-money-bill-wave"></i> Fee Payment</a></li>
+    <li><a href="apply.html" class="mobile-sub"><i class="fas fa-file-alt"></i> How to Apply</a></li>
+    <li><a href="gallery.html"> Gallery</a></li>
+    <li><a href="parents-zone.html"> Parents Zone</a></li>
+    <li><a href="contact.html"> Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- STICKY HEADER -->
+<div class="sticky-header" id="stickyHeader">
+  <div class="sticky-logo">
+    <img src="logo.jpeg" alt="School Logo" class="logo-placeholder">
+    <span>St. Francis Girls</span>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="highhome.html">Home</a></li>
+    <li>
+      <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
+        <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
+        <li><a href="vision.html"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
+        <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
+        <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
+        <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
+        <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
+        <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+        <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+        <li><a href="games.html"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
+        <li><a href="clubs.html"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
+        <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+        <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Academics <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="senior-secondary.html"><i class="fas fa-graduation-cap"></i> Senior Secondary (Grade 10)</a></li>
+        <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Our Teachers</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Admission <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="adm-overview.html"><i class="fas fa-info-circle"></i> Overview</a></li>
+        <li><a href="criteria.html"><i class="fas fa-clipboard-list"></i> Admission Criteria</a></li>
+        <li><a href="terms.html"><i class="fas fa-calendar-alt"></i> Term Dates</a></li>
+        <li><a href="fee.html"><i class="fas fa-money-bill-wave"></i> Fee Payment</a></li>
+        <li><a href="apply.html"><i class="fas fa-file-alt"></i> How to Apply</a></li>
+      </ul>
+    </li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="parents-zone.html" class="active">Parents Zone</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-phone"><i class="fas fa-phone"></i> +254 054 2031498</div>
+  <button class="sticky-scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top"><i class="fas fa-chevron-up"></i><span>Top</span></button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="highhome.html">SFGS</a>
+      <span>/</span> Parents Zone
+    </div>
+    <h2>Parents <em>Zone</em></h2>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">
+      Stay connected with your daughter's academic progress and school life.
+    </p>
+  </div>
+  <div class="hero-side">
+    <div class="big-text">SFG<br>S</div>
+  </div>
+</section>
+
+<!-- MOTTO STRIP -->
+<div class="motto-strip">
+  <span class="star"></span>
+  <p>Motto: "ORA ET LABORA — PRAY AND WORK!"</p>
+  <span class="star"></span>
+</div>
+
+<!-- PARENTS ZONE MAIN SECTION -->
+<div class="pz-section">
+
+  <div class="pz-intro">
+    <p>
+      Welcome to the SFGS Parents Zone. This page provides everything you need to stay informed and
+      connected with your daughter's education at St. Francis Girls' Secondary School, Suwerwa.
+      Access academic reports, school notices, term dates, and more — all in one place.
+    </p>
+  </div>
+
+  <!-- Two-card grid -->
+  <div class="pz-grid">
+
+    <!-- CARD 1: Zeraki Learning Portal -->
+    <div class="pz-card pz-card-primary">
+      <div class="pz-icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Zeraki Learning Portal</h3>
+      <p class="pz-subtitle">
+        Access your daughter's academic results, performance reports, and progress
+      </p>
+      <p class="pz-desc">
+        Zeraki Learning is the school's digital platform for academic performance tracking.
+        Parents and guardians can log in to view exam results, class rankings, subject performance,
+        and teacher remarks — securely and in real time. Monitor academic progress across all
+        subjects throughout the term, and stay ahead with data-driven insights into your daughter's
+        learning journey.
+      </p>
+      <a href="https://zeraki.app/" target="_blank" rel="noopener noreferrer" class="btn-zeraki">
+        <i class="fas fa-external-link-alt" style="margin-right:8px;"></i> Access Zeraki Learning
+      </a>
+      <p class="pz-note">
+        <i class="fas fa-lock"></i>
+        Use the login credentials provided by the school at enrolment. Contact the school office if
+        you need your access details or have forgotten your password.
+      </p>
+    </div>
+
+    <!-- CARD 2: Other Parent Resources -->
+    <div class="pz-card pz-card-secondary">
+      <div class="pz-icon"><i class="fas fa-folder-open"></i></div>
+      <h3>Parent Resources</h3>
+      <p class="pz-subtitle">
+        Important school information and quick access links for parents and guardians
+      </p>
+      <ul class="pz-resource-list">
+        <li>
+          <a href="terms.html">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Term Dates &amp; School Calendar</span>
+          </a>
+        </li>
+        <li>
+          <a href="fee.html">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>Fee Payment Information</span>
+          </a>
+        </li>
+        <li>
+          <a href="noticeboard.html">
+            <i class="fas fa-bell"></i>
+            <span>School Notice Board</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <i class="fas fa-envelope"></i>
+            <span>Contact the School</span>
+          </a>
+        </li>
+        <li>
+          <div class="pz-resource-plain">
+            <i class="fas fa-phone"></i>
+            <div class="res-detail">
+              <span class="res-label">Emergency Contact</span>
+              <a href="tel:+254542031498" class="res-value" style="text-decoration:none;color:#0a1f3c;">+254 054 2031498</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- /.pz-grid -->
+
+  <!-- Important Notice (full width) -->
+  <div class="pz-notice">
+    <div class="pz-notice-icon"><i class="fas fa-bullhorn"></i></div>
+    <div class="pz-notice-content">
+      <h4>Important Notice to Parents &amp; Guardians</h4>
+      <p>
+        Parents are encouraged to maintain regular communication with the school. For academic queries,
+        contact the Deputy Principal (Academics) during office hours (Mon–Fri, 8am–5pm). For welfare
+        and pastoral matters, contact the Dean of Students. All school communication is official when
+        issued through the school office or the Zeraki platform. Please disregard unofficial channels.
+      </p>
+    </div>
+  </div>
+
+</div><!-- /.pz-section -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-flex">
+        <img src="logo.jpeg" alt="School Logo" class="logo-placeholder footer-logo-custom">
+        <div>
+          <div class="footer-title-text">St. Francis Girls'</div>
+          <div class="footer-name-text">Suwerwa</div>
+        </div>
+      </div>
+      <p>A Girls' National Boarding School providing holistic quality education in a Catholic Christian environment guided by love, excellence, and selfless service. Ora et Labora!</p>
+      <div class="footer-social">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>About SFGS</h4>
+      <ul>
+        <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
+        <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
+        <li><a href="vision.html"><i class="fas fa-eye"></i> Mission, Vision &amp; Values</a></li>
+        <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
+        <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
+        <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
+        <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
+        <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+        <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="senior-secondary.html"><i class="fas fa-graduation-cap"></i> Senior Secondary</a></li>
+        <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Our Teachers</a></li>
+        <li><a href="adm-overview.html"><i class="fas fa-info-circle"></i> Admission Overview</a></li>
+        <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+        <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+        <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a href="parents-zone.html"><i class="fas fa-house-user"></i> Parents Zone</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>P.O. Box 1200 – 30200, Kitale, Trans-Nzoia County, Kenya</span></div>
+      <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+254542031498" class="footer-link-color">+254 054 2031498</a></div>
+      <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@sfgssuwerwa.sc.ke" class="footer-link-color">info@sfgssuwerwa.sc.ke</a></div>
+      <div class="footer-divider-top">
+        <a href="apply.html" class="btn-gold btn-apply-footer">Apply Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 St. Francis Girls' Secondary School &ndash; Suwerwa, Kitale. All Rights Reserved. |
+    <a href="highhome.html">sfgssuwerwa.sc.ke</a>
+  </div>
+</footer>
+
+<script src="high.js"></script>
+<script>
+   const sticky = document.getElementById('stickyHeader');
+  window.addEventListener('scroll', function () {
+    sticky.classList.toggle('visible', window.scrollY > 200);
+  });
+</script>
+
+<!-- Floating Buttons -->
+<div class="floating-btns">
+  <a class="fab-whatsapp" href="https://wa.me/254542031498" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+</body>
+</html>

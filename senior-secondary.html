@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Senior Secondary (Grade 10) — St. Francis Girls' Secondary School, Suwerwa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="high.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.4rem;
+      margin: 1.8rem 0 2.4rem;
+    }
+    .pathway-card {
+      border-radius: 12px;
+      padding: 1.8rem 1.4rem;
+      text-align: center;
+      border: 1px solid var(--border, #e0d9cc);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .pathway-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(10, 31, 60, 0.12);
+    }
+    .pathway-card.stem {
+      background: linear-gradient(145deg, #0a1f3c, #162d52);
+      color: #fff;
+    }
+    .pathway-card.arts {
+      background: linear-gradient(145deg, #7a4a00, #a86200);
+      color: #fff;
+    }
+    .pathway-card.technical {
+      background: linear-gradient(145deg, #1a5c3a, #237a4e);
+      color: #fff;
+    }
+    .pathway-icon {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    .pathway-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.7rem;
+      color: #fff;
+    }
+    .pathway-card p {
+      font-size: 0.87rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .pathway-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      color: #fff;
+    }
+    .features-list {
+      list-style: none;
+      margin: 1.2rem 0 2rem;
+      padding: 0;
+    }
+    .features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border, #e0d9cc);
+      font-size: 0.93rem;
+      color: var(--text, #1c1c1c);
+    }
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+    .features-list li i {
+      color: #c9990a;
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 18px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .pathway-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>
+    <a href="tel:+254542031498"><i class="fas fa-phone"></i> +254 054 2031498</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="mailto:info@sfgssuwerwa.sc.ke"><i class="fas fa-envelope"></i> info@sfgssuwerwa.sc.ke</a>
+  </div>
+  <div class="topbar-socials">
+    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="sticky-logo">
+    <img src="logo.jpeg" alt="School Logo" class="logo-placeholder">
+    <span>St. Francis Girls</span>
+  </div>
+  <ul class="nav-menu" id="desktopNav">
+    <li><a href="highhome.html">Home</a></li>
+    <li>
+      <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
+        <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
+        <li><a href="vision.html"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
+        <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
+        <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
+        <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
+        <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
+        <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+        <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+        <li><a href="games.html"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
+        <li><a href="clubs.html"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
+        <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+        <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Academics <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="senior-secondary.html"><i class="fas fa-graduation-cap"></i> Senior Secondary (Grade 10)</a></li>
+        <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Our Teachers</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Admission <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="adm-overview.html"><i class="fas fa-info-circle"></i> Overview</a></li>
+        <li><a href="criteria.html"><i class="fas fa-clipboard-list"></i> Admission Criteria</a></li>
+        <li><a href="terms.html"><i class="fas fa-calendar-alt"></i> Term Dates</a></li>
+        <li><a href="fee.html"><i class="fas fa-money-bill-wave"></i> Fee Payment</a></li>
+        <li><a href="apply.html"><i class="fas fa-file-alt"></i> How to Apply</a></li>
+      </ul>
+    </li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="parents-zone.html">Parents Zone</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-phone"><i class="fas fa-phone"></i> +254 054 2031498</div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- MOBILE NAV DRAWER -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <span>St. Francis Girls</span>
+    <button class="mobile-close" id="mobileClose"></button>
+  </div>
+  <ul>
+    <li><a href="highhome.html"> Home</a></li>
+    <li><a href="#"> About Us</a></li>
+    <li><a href="profile.html" class="mobile-sub"><i class="fas fa-id-card"></i> Our Profile</a></li>
+    <li><a href="history.html" class="mobile-sub"><i class="fas fa-bookmark"></i> Our History</a></li>
+    <li><a href="vision.html" class="mobile-sub"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
+    <li><a href="administration.html" class="mobile-sub"><i class="fas fa-users"></i> School Administration</a></li>
+    <li><a href="board-members.html" class="mobile-sub"><i class="fas fa-user-tie"></i> Board Members</a></li>
+    <li><a href="policies.html" class="mobile-sub"><i class="fas fa-shield"></i> School Policies</a></li>
+    <li><a href="anthem.html" class="mobile-sub"><i class="fas fa-music"></i> School Anthem</a></li>
+    <li><a href="news.html" class="mobile-sub"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+    <li><a href="noticeboard.html" class="mobile-sub"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+    <li><a href="games.html" class="mobile-sub"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
+    <li><a href="clubs.html" class="mobile-sub"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
+    <li><a href="alumni.html" class="mobile-sub"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+    <li><a href="kcse.html" class="mobile-sub"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+    <li><a href="#"> Academics</a></li>
+    <li><a href="senior-secondary.html" class="mobile-sub"><i class="fas fa-graduation-cap"></i> Senior Secondary (Grade 10)</a></li>
+    <li><a href="teachers.html" class="mobile-sub"><i class="fas fa-chalkboard-teacher"></i> Our Teachers</a></li>
+    <li><a href="#"> Admission</a></li>
+    <li><a href="adm-overview.html" class="mobile-sub"><i class="fas fa-info-circle"></i> Overview</a></li>
+    <li><a href="criteria.html" class="mobile-sub"><i class="fas fa-clipboard-list"></i> Admission Criteria</a></li>
+    <li><a href="terms.html" class="mobile-sub"><i class="fas fa-calendar-alt"></i> Term Dates</a></li>
+    <li><a href="fee.html" class="mobile-sub"><i class="fas fa-money-bill-wave"></i> Fee Payment</a></li>
+    <li><a href="apply.html" class="mobile-sub"><i class="fas fa-file-alt"></i> How to Apply</a></li>
+    <li><a href="gallery.html"> Gallery</a></li>
+    <li><a href="parents-zone.html"> Parents Zone</a></li>
+    <li><a href="contact.html"> Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- STICKY HEADER -->
+<div class="sticky-header" id="stickyHeader">
+  <div class="sticky-logo">
+    <img src="logo.jpeg" alt="School Logo" class="logo-placeholder">
+    <span>St. Francis Girls</span>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="highhome.html">Home</a></li>
+    <li>
+      <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
+        <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
+        <li><a href="vision.html"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
+        <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
+        <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
+        <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
+        <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
+        <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+        <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+        <li><a href="games.html"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
+        <li><a href="clubs.html"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
+        <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+        <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="active">Academics <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="senior-secondary.html"><i class="fas fa-graduation-cap"></i> Senior Secondary (Grade 10)</a></li>
+        <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Our Teachers</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Admission <i class="fas fa-chevron-down icon-chevron"></i></a>
+      <ul class="dropdown">
+        <li><a href="adm-overview.html"><i class="fas fa-info-circle"></i> Overview</a></li>
+        <li><a href="criteria.html"><i class="fas fa-clipboard-list"></i> Admission Criteria</a></li>
+        <li><a href="terms.html"><i class="fas fa-calendar-alt"></i> Term Dates</a></li>
+        <li><a href="fee.html"><i class="fas fa-money-bill-wave"></i> Fee Payment</a></li>
+        <li><a href="apply.html"><i class="fas fa-file-alt"></i> How to Apply</a></li>
+      </ul>
+    </li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="parents-zone.html">Parents Zone</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-phone"><i class="fas fa-phone"></i> +254 054 2031498</div>
+  <button class="sticky-scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top"><i class="fas fa-chevron-up"></i><span>Top</span></button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="highhome.html">SFGS</a>
+      <span>/</span>
+      <a href="senior-secondary.html">Academics</a>
+      <span>/</span> Senior Secondary
+    </div>
+    <h2>Senior Secondary <em>(Grade 10)</em></h2>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">
+      Kenya's Competency Based Curriculum — preparing young women for higher learning and purposeful careers.
+    </p>
+  </div>
+  <div class="hero-side">
+    <div class="big-text">SFG<br>S</div>
+  </div>
+</section>
+
+<!-- MOTTO STRIP -->
+<div class="motto-strip">
+  <span class="star"></span>
+  <p>Motto: "ORA ET LABORA — PRAY AND WORK!"</p>
+  <span class="star"></span>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <h3 class="section-heading">About Senior Secondary</h3>
+    <p>
+      St. Francis Girls' Secondary School, Suwerwa has embraced Kenya's Competency Based Curriculum (CBC)
+      framework as rolled out by the Ministry of Education. Senior Secondary marks a significant milestone
+      in a student's academic journey — it is the level at which learners make meaningful academic choices
+      aligned with their aptitudes, interests, and career aspirations.
+    </p>
+    <p>
+      Grade 10 is the first year of Senior Secondary School under CBC, following the completion of Junior
+      Secondary (Grades 7–9). At this level, students select a Learning Pathway that will guide their
+      studies through Grades 10, 11, and 12, culminating in the Kenya Certificate of Secondary Education
+      (KCSE) examinations administered by the Kenya National Examinations Council (KNEC).
+    </p>
+    <p>
+      SFGS is fully equipped to deliver quality Senior Secondary education, with competent CBC-trained
+      teachers, modern laboratories, a well-resourced library, and a structured pastoral support system
+      — all within a faith-centred, girls-only environment that prioritises holistic development.
+    </p>
+
+    <h3 class="section-heading">Learning Pathways</h3>
+    <p>
+      Under the CBC Senior Secondary framework, students choose one of three Learning Pathways. Each pathway
+      is designed to align academic content with the learner's strengths and future career goals.
+    </p>
+
+    <div class="pathway-grid">
+      <!-- STEM -->
+      <div class="pathway-card stem">
+        <div class="pathway-icon"><i class="fas fa-flask"></i></div>
+        <h4>STEM</h4>
+        <p>
+          Science, Technology, Engineering &amp; Mathematics. This pathway is ideal for students
+          interested in medicine, engineering, data science, and applied sciences. It emphasises
+          analytical reasoning, laboratory work, and mathematical application.
+        </p>
+        <span class="pathway-badge">Science Track</span>
+      </div>
+
+      <!-- Arts & Social Sciences -->
+      <div class="pathway-card arts">
+        <div class="pathway-icon"><i class="fas fa-book-open"></i></div>
+        <h4>Arts &amp; Social Sciences</h4>
+        <p>
+          This pathway covers humanities, languages, social studies, creative arts, and business.
+          Ideal for students heading into law, journalism, public administration, education, theology,
+          and social sciences.
+        </p>
+        <span class="pathway-badge">Humanities Track</span>
+      </div>
+
+      <!-- Technical & Applied Learning -->
+      <div class="pathway-card technical">
+        <div class="pathway-icon"><i class="fas fa-tools"></i></div>
+        <h4>Technical &amp; Applied Learning</h4>
+        <p>
+          This pathway focuses on technical, vocational, and applied skills including computing,
+          entrepreneurship, and home science. It prepares students for technical colleges, polytechnics,
+          and entrepreneurial careers.
+        </p>
+        <span class="pathway-badge">Technical Track</span>
+      </div>
+    </div>
+
+    <h3 class="section-heading">Key Features</h3>
+    <ul class="features-list">
+      <li>
+        <i class="fas fa-users"></i>
+        <span><strong>Small class sizes</strong> — ensuring individual attention and a personalised learning experience for every student.</span>
+      </li>
+      <li>
+        <i class="fas fa-chalkboard-teacher"></i>
+        <span><strong>Experienced CBC-trained teachers</strong> — all teaching staff have undergone competency-based curriculum training and continue professional development.</span>
+      </li>
+      <li>
+        <i class="fas fa-microscope"></i>
+        <span><strong>Modern labs and facilities</strong> — fully equipped science laboratories, a computer lab, a school library, and a chapel supporting both academic and spiritual life.</span>
+      </li>
+      <li>
+        <i class="fas fa-star"></i>
+        <span><strong>Co-curricular integration</strong> — academics are complemented by clubs, sports, music, drama, and community service programmes aligned with CBC's holistic philosophy.</span>
+      </li>
+      <li>
+        <i class="fas fa-cross"></i>
+        <span><strong>Faith-centred environment</strong> — all learning is grounded in Catholic Franciscan values of prayer, service, humility, and excellence — Ora et Labora.</span>
+      </li>
+    </ul>
+
+    <h3 class="section-heading">Entry Requirements</h3>
+    <p>
+      Admission into Grade 10 (Senior Secondary) at SFGS is open to girls who have successfully completed
+      Grade 9 (Junior Secondary) and hold a valid KNEC Junior Secondary School Certificate. Selection
+      is based on academic performance in the Grade 9 national assessment, pathway preference, and available
+      places. The school is a national school and draws students from all counties across Kenya.
+      Applicants are encouraged to apply early as spaces are limited. Please visit our
+      <a href="adm-overview.html" style="color:var(--navy,#0a1f3c);font-weight:600;">Admission Overview</a>
+      page or the <a href="criteria.html" style="color:var(--navy,#0a1f3c);font-weight:600;"><i class="fas fa-clipboard-list"></i> Admission Criteria</a>
+      page for full details.
+    </p>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Academics Links -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">
+        <h4>Academics</h4>
+      </div>
+      <div class="sidebar-card-body">
+        <a class="sidebar-link active" href="senior-secondary.html">Senior Secondary (Grade 10) <span class="arrow"></span></a>
+        <a class="sidebar-link" href="teachers.html">Our Teachers <span class="arrow"></span></a>
+      </div>
+    </div>
+
+    <!-- Admission Links -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">
+        <h4>Admission</h4>
+      </div>
+      <div class="sidebar-card-body">
+        <a class="sidebar-link" href="adm-overview.html">Admission Overview <span class="arrow"></span></a>
+        <a class="sidebar-link" href="criteria.html">Admission Criteria <span class="arrow"></span></a>
+        <a class="sidebar-link" href="terms.html">Term Dates <span class="arrow"></span></a>
+        <a class="sidebar-link" href="fee.html">Fee Payment <span class="arrow"></span></a>
+      </div>
+    </div>
+
+    <!-- Apply CTA -->
+    <div class="apply-cta">
+      <h4>Ready to Join?</h4>
+      <p>Applications for Grade 10 Senior Secondary are now open. Secure your place at SFGS today.</p>
+      <a class="apply-btn" href="apply.html">Apply Now</a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-flex">
+        <img src="logo.jpeg" alt="School Logo" class="logo-placeholder footer-logo-custom">
+        <div>
+          <div class="footer-title-text">St. Francis Girls'</div>
+          <div class="footer-name-text">Suwerwa</div>
+        </div>
+      </div>
+      <p>A Girls' National Boarding School providing holistic quality education in a Catholic Christian environment guided by love, excellence, and selfless service. Ora et Labora!</p>
+      <div class="footer-social">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>About SFGS</h4>
+      <ul>
+        <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
+        <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
+        <li><a href="vision.html"><i class="fas fa-eye"></i> Mission, Vision &amp; Values</a></li>
+        <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
+        <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
+        <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
+        <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
+        <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+        <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="senior-secondary.html"><i class="fas fa-graduation-cap"></i> Senior Secondary</a></li>
+        <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Our Teachers</a></li>
+        <li><a href="adm-overview.html"><i class="fas fa-info-circle"></i> Admission Overview</a></li>
+        <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+        <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+        <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a href="parents-zone.html"><i class="fas fa-house-user"></i> Parents Zone</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>P.O. Box 1200 – 30200, Kitale, Trans-Nzoia County, Kenya</span></div>
+      <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+254542031498" class="footer-link-color">+254 054 2031498</a></div>
+      <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@sfgssuwerwa.sc.ke" class="footer-link-color">info@sfgssuwerwa.sc.ke</a></div>
+      <div class="footer-divider-top">
+        <a href="apply.html" class="btn-gold btn-apply-footer">Apply Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 St. Francis Girls' Secondary School &ndash; Suwerwa, Kitale. All Rights Reserved. |
+    <a href="highhome.html">sfgssuwerwa.sc.ke</a>
+  </div>
+</footer>
+
+<script src="high.js"></script>
+
+<!-- Floating Buttons -->
+<div class="floating-btns">
+  <a class="fab-whatsapp" href="https://wa.me/254542031498" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+</body>
+</html>

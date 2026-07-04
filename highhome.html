@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>St. Francis Girls' Secondary School, Suwerwa — Ora et Labora</title>
+  <title>St. Francis Girls' Secondary School, Suwerwa</title>
   <link rel="stylesheet" href="high.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
@@ -12,73 +12,69 @@
 
 <!-- TOP BAR -->
 <div class="top-bar">
+ <div class="top-bar-inner">
   <div class="social-icons">
-    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
   </div>
   <div class="contact-info">
     <span><i class="fas fa-phone"></i> +254 054 2031498</span>
     <span><i class="fas fa-envelope"></i> info@sfgssuwerwa.sc.ke</span>
   </div>
+ </div>
 </div>
 
 <!-- MAIN HEADER -->
 <header class="main-header">
+ <div class="header-inner">
   <div class="logo">
     <img src="logo.jpeg" alt="School Logo">
-    <h2>ST FRANCIS GIRLS</h2>
-    <br>
-    <h3>SUWERWA</h3>
     <div class="logo-text">
+      <h2>ST FRANCIS GIRLS</h2>
+      <h3>SUWERWA</h3>
     </div>
-</div>
   </div>
-  <div class="flex-center">
-    <a href="tel:+254542031498" class="header-phone-link">
-      <i class="fas fa-phone icon-gold-margin"></i>+254 054 2031498
-    </a>
-    <div class="icons">
-      <i class="fas fa-search" id="searchBtn"></i>
-    </div>
-    <!-- HAMBURGER  opens mobile drawer -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<!-- SEARCH BOX -->
-<div class="search-box" id="searchBox">
-  <input type="text" placeholder="Search here...">
-  <button>Search</button>
-</div>
-
-<!-- DESKTOP NAVBAR -->
-<nav class="navbar">
-  <div class="nav-inner">
-    <ul class="nav-menu" id="desktopNav">
+  <ul class="nav-menu" id="desktopNav">
 
       <li class="active"><a href="highhome.html">Home</a></li>
 
       <li>
         <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
-        <ul class="dropdown">
-          <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
-          <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
-          <li><a href="vision.html"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
-          <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
-          <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
-          <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
-          <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
-          <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
-          <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
-          <li><a href="games.html"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
-          <li><a href="clubs.html"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
-          <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
-          <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
-        </ul>
+        <div class="dropdown mega-menu">
+          <div class="mega-col">
+            <h4 class="mega-heading">About SFGS</h4>
+            <ul>
+              <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
+              <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
+              <li><a href="vision.html"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
+              <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
+              <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
+              <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
+              <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4 class="mega-heading">Information Desk</h4>
+            <ul>
+              <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+              <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+              <li><a href="games.html"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
+              <li><a href="clubs.html"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4 class="mega-heading">More...</h4>
+            <ul>
+              <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+              <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+            </ul>
+          </div>
+          <div class="mega-image">
+            <div class="mega-image-inner"><i class="fas fa-school"></i></div>
+          </div>
+        </div>
       </li>
 
       <li>
@@ -104,10 +100,25 @@
       <li><a href="parents-zone.html">Parents Zone</a></li>
       <li><a href="contact.html">Contact Us</a></li>
 
-    </ul>
-    <div class="nav-phone"><i class="fas fa-phone"></i> +254 054 2031498</div>
+  </ul>
+  <div class="header-icons">
+    <div class="icons">
+      <i class="fas fa-search" id="searchBtn"></i>
+      <!-- SEARCH BOX -->
+      <div class="search-box" id="searchBox">
+        <div class="search-box-row">
+          <input type="text" id="searchInput" placeholder="Search here...">
+          <button id="searchSubmit"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+    <!-- HAMBURGER  opens mobile drawer -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</nav>
+ </div>
+</header>
 
 <!-- STICKY HEADER -->
 <div class="sticky-header" id="stickyHeader">
@@ -119,21 +130,39 @@
     <li class="active"><a href="highhome.html">Home</a></li>
     <li>
       <a href="#">About Us <i class="fas fa-chevron-down icon-chevron"></i></a>
-      <ul class="dropdown">
-        <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
-        <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
-        <li><a href="vision.html"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
-        <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
-        <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
-        <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
-        <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
-        <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
-        <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
-        <li><a href="games.html"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
-        <li><a href="clubs.html"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
-        <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
-        <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
-      </ul>
+      <div class="dropdown mega-menu">
+        <div class="mega-col">
+          <h4 class="mega-heading">About SFGS</h4>
+          <ul>
+            <li><a href="profile.html"><i class="fas fa-id-card"></i> Our Profile</a></li>
+            <li><a href="history.html"><i class="fas fa-bookmark"></i> Our History</a></li>
+            <li><a href="vision.html"><i class="fas fa-eye"></i> Vision, Mission &amp; Values</a></li>
+            <li><a href="administration.html"><i class="fas fa-users"></i> School Administration</a></li>
+            <li><a href="board-members.html"><i class="fas fa-user-tie"></i> Board Members</a></li>
+            <li><a href="policies.html"><i class="fas fa-shield"></i> School Policies</a></li>
+            <li><a href="anthem.html"><i class="fas fa-music"></i> School Anthem</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h4 class="mega-heading">Information Desk</h4>
+          <ul>
+            <li><a href="news.html"><i class="fas fa-newspaper"></i> News &amp; Events</a></li>
+            <li><a href="noticeboard.html"><i class="fas fa-clipboard"></i> Notice Board</a></li>
+            <li><a href="games.html"><i class="fas fa-futbol"></i> Games &amp; Sports</a></li>
+            <li><a href="clubs.html"><i class="fas fa-atom"></i> Clubs &amp; Societies</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h4 class="mega-heading">More...</h4>
+          <ul>
+            <li><a href="alumni.html"><i class="fas fa-user-graduate"></i> Notable Alumni</a></li>
+            <li><a href="kcse.html"><i class="fas fa-clipboard-list"></i> KCSE Results</a></li>
+          </ul>
+        </div>
+        <div class="mega-image">
+          <div class="mega-image-inner"><i class="fas fa-school"></i></div>
+        </div>
+      </div>
     </li>
     <li>
       <a href="#">Academics <i class="fas fa-chevron-down icon-chevron"></i></a>
@@ -210,8 +239,7 @@
     <div class="slide-bg"></div>
     <div class="slide-content">
       <p class="eyebrow fade-up">Welcome to St. Francis Girls' Secondary School, Suwerwa</p>
-      <h1 class="fade-up delay-1">Ora et Labora<br><span>Pray and Work!</span></h1>
-      <p class="fade-up delay-2">A Girls' National Boarding School providing holistic Catholic education guided by love, excellence, and selfless service in the Franciscan tradition.</p>
+      <h1 class="fade-up delay-1">Faith, Excellence<br><span>&amp; Service</span></h1>
       <div class="fade-up delay-3">
         <a href="profile.html" class="btn-gold">Learn More</a>
         <a href="apply.html" class="btn-outline">Apply Now</a>
@@ -283,8 +311,8 @@
 
 <!-- MOTTO BANNER -->
 <div class="motto-banner">
-  <h3>Our Motto</h3>
-  <h2>Ora et Labora — Pray and Work!</h2>
+  <h3>Our Commitment</h3>
+  <h2>Excellence in Catholic Education</h2>
   <p>One of Kenya's leading girls' national schools, recognised for sustained academic excellence and the holistic formation of young women.</p>
   <a href="contact.html">Contact Us Today</a>
 </div>
@@ -326,7 +354,7 @@
       <div class="notice-body">
         <p class="notice-date"><i class="fas fa-calendar-alt icon-margin"></i> 04 December 2025</p>
         <h3>St. Francis Girls' Secondary School — Suwerwa</h3>
-        <p>Our mission: to provide holistic quality education in a Catholic Christian environment guided by love, excellence, and selfless service. Ora et Labora.</p>
+        <p>Our mission: to provide holistic quality education in a Catholic Christian environment guided by love, excellence, and selfless service.</p>
         <a href="noticeboard.html">Read More </a>
       </div>
     </div>
@@ -368,7 +396,7 @@
   <div class="embodiment-content">
     <p class="section-label">Our Foundation</p>
     <h2>Embodiment of <span>Hope</span></h2>
-    <p>St. Francis Girls' Secondary School, Suwerwa draws its spirit and strength from the Franciscan tradition — a tradition of prayer, joyful service, and love for all creation. Founded by the Franciscan Sisters of St. Elizabeth in 1972, the school has for over five decades embodied the motto of St. Francis of Assisi: <em>Ora et Labora</em> — Pray and Work.</p>
+    <p>St. Francis Girls' Secondary School, Suwerwa draws its spirit and strength from the Franciscan tradition — a tradition of prayer, joyful service, and love for all creation. Founded by the Franciscan Sisters of St. Elizabeth in 1972, the school has for over five decades embodied this spirit of prayer and dedicated service.</p>
     <p>The exceptional performance the school has posted year after year can be attributed to dedicated, highly-trained staff, disciplined and focused students, and above all, a community that places faith at the centre of all endeavours. We give glory to God Almighty for every achievement, and we look forward with hope to the generations of women leaders yet to come.</p>
     <a href="profile.html" class="btn-gold">Learn More</a>
   </div>
@@ -387,11 +415,11 @@
   <p class="section-label">Our Community</p>
   <h2>Partner Institutions</h2>
   <div class="partner-logos">
-    <div class="partner-logo">SFGS<br>Suwerwa</div>
-    <div class="partner-logo">Kitale National<br>Poly.</div>
-    <div class="partner-logo">Ministry of<br>Education</div>
-    <div class="partner-logo">Trans-Nzoia<br>County</div>
-    <div class="partner-logo">Diocese of<br>Eldoret</div>
+    <div class="partner-logo"><img src="logo.jpeg" alt="St. Francis Girls' Secondary School, Suwerwa"></div>
+    <div class="partner-logo"><img src="partners/kitale-national-polytechnic.png" alt="Kitale National Polytechnic"></div>
+    <div class="partner-logo"><img src="partners/ministry-of-education.png" alt="Ministry of Education, Kenya"></div>
+    <div class="partner-logo"><img src="partners/trans-nzoia-county.png" alt="Trans-Nzoia County Government"></div>
+    <div class="partner-logo"><img src="partners/diocese-of-eldoret.png" alt="Catholic Diocese of Eldoret"></div>
   </div>
 </section>
 
@@ -406,12 +434,12 @@
           <div class="footer-name-text">Suwerwa</div>
         </div>
       </div>
-      <p>A Girls' National Boarding School providing holistic quality education in a Catholic Christian environment guided by love, excellence, and selfless service. Ora et Labora!</p>
+      <p>A Girls' National Boarding School providing holistic quality education in a Catholic Christian environment guided by love, excellence, and selfless service.</p>
       <div class="footer-social">
-        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
     <div class="footer-col">

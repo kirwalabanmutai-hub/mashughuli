@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Site pages this search can find, keyed by page title + related keywords
     const pageIndex = [
-        { url: 'highhome.html',        keywords: ['home'] },
+        { url: 'index.html',        keywords: ['home'] },
         { url: 'profile.html',         keywords: ['our profile', 'profile'] },
         { url: 'history.html',         keywords: ['our history', 'history'] },
         { url: 'vision.html',          keywords: ['vision', 'mission', 'values', 'mission and values'] },

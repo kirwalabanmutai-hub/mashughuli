@@ -1180,6 +1180,13 @@ footer {
 .sticky-nav a:hover {
   color: var(--gold);
 }
+.sticky-header .hamburger {
+  display: none;
+  padding: 4px;
+}
+.sticky-header .hamburger span {
+  background: var(--white);
+}
 /*  SEARCH OVERLAY  */
 .search-overlay {
   display: none;
@@ -1464,9 +1471,16 @@ a.app-list-item:hover {
   }
   .top-bar-inner {
     padding: 6px 20px;
+    flex-wrap: wrap;
+    gap: 6px;
   }
-  .main-header {
-    padding: 12px 20px;
+  .top-bar .social-icons a {
+    margin-right: 10px;
+  }
+  .header-inner {
+    padding: 10px 20px;
+    justify-content: space-between;
+    gap: 10px;
   }
   .nav-inner {
     padding: 0 20px;
@@ -1477,6 +1491,15 @@ a.app-list-item:hover {
   /* hide desktop nav on mobile */
   .nav-phone {
     display: none;
+  }
+  .sticky-header .hamburger {
+    display: block;
+  }
+  .sticky-header {
+    padding: 10px 20px;
+  }
+  .sticky-logo span {
+    font-size: 15px;
   }
   .hero-slider {
     height: 420px;

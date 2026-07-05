@@ -1,15 +1,17 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
 
   /*  MOBILE NAV  */
-  const hamburger    = document.getElementById('hamburger');
-  const mobileNav    = document.getElementById('mobileNav');
-  const mobileClose  = document.getElementById('mobileClose');
-  const mobileOverlay = document.getElementById('mobileOverlay');
+  const hamburger       = document.getElementById('hamburger');
+  const stickyHamburger = document.getElementById('stickyHamburger');
+  const mobileNav       = document.getElementById('mobileNav');
+  const mobileClose     = document.getElementById('mobileClose');
+  const mobileOverlay   = document.getElementById('mobileOverlay');
 
   function openMobile()  { mobileNav.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow='hidden'; }
   function closeMobile() { mobileNav.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow=''; }
 
   hamburger.addEventListener('click', openMobile);
+  if (stickyHamburger) stickyHamburger.addEventListener('click', openMobile);
   mobileClose.addEventListener('click', closeMobile);
   mobileOverlay.addEventListener('click', closeMobile);
 

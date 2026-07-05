@@ -1181,11 +1181,21 @@ footer {
   color: var(--gold);
 }
 .sticky-header .hamburger {
-  display: none;
   padding: 4px;
 }
 .sticky-header .hamburger span {
   background: var(--white);
+}
+.sticky-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.sticky-header .icons .fa-search {
+  color: var(--white);
+}
+.sticky-header .icons .fa-search:hover {
+  color: var(--gold);
 }
 /*  SEARCH OVERLAY  */
 .search-overlay {
@@ -1491,9 +1501,6 @@ a.app-list-item:hover {
   /* hide desktop nav on mobile */
   .nav-phone {
     display: none;
-  }
-  .sticky-header .hamburger {
-    display: block;
   }
   .sticky-header {
     padding: 10px 20px;
@@ -8796,7 +8803,9 @@ footer a {
   gap: .5rem;
 }
 .doc-required::before {
-  content: '📄';
+  content: '\f15c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
 }
 .exam-subjects {
   display: grid;
@@ -8830,7 +8839,9 @@ footer a {
   overflow: hidden;
 }
 .final-cta::before {
-  content: '🎓';
+  content: '\f19d';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
   position: absolute;
   font-size: 9rem;
   opacity: .08;
@@ -8957,7 +8968,9 @@ Page: fee.html
   overflow: hidden;
 }
 .fee-intro-card::before {
-  content: '💰';
+  content: '\f53a';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
   position: absolute;
   font-size: 14rem;
   opacity: .05;
@@ -9152,9 +9165,10 @@ Page: fee.html
   gap: .5rem;
 }
 .flex-feature::before {
-  content: '✓';
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
   color: #fff;
-  font-weight: 700;
+  font-weight: 900;
 }
 .policy-note {
   background: #fff;
@@ -9409,9 +9423,10 @@ Page: terms.html
   border-bottom: none;
 }
 .notes-card li::before {
-  content: '✓';
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
   color: #fff;
-  font-weight: 700;
+  font-weight: 900;
   flex-shrink: 0;
 }
 @media(max-width: 700px) {
@@ -9556,7 +9571,9 @@ Page: criteria.html
   gap: .5rem;
 }
 .doc-pill::before {
-  content: '📄';
+  content: '\f15c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
   font-size: .95rem;
 }
 .eval-grid {

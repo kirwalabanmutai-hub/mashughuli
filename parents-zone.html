@@ -494,9 +494,20 @@
     <li><a href="contact.html">Contact Us</a></li>
   </ul>
   <div class="nav-phone"><i class="fas fa-phone"></i> +254 054 2031498</div>
-  <button class="hamburger sticky-hamburger" id="stickyHamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="sticky-header-icons">
+    <div class="icons">
+      <i class="fas fa-search" id="stickySearchBtn"></i>
+      <div class="search-box" id="stickySearchBox">
+        <div class="search-box-row">
+          <input type="text" id="stickySearchInput" placeholder="Search here...">
+          <button id="stickySearchSubmit"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger sticky-hamburger" id="stickyHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
   <button class="sticky-scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top"><i class="fas fa-chevron-up"></i><span>Top</span></button>
 </div>
 

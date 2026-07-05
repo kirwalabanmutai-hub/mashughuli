@@ -68,34 +68,6 @@
 
 });
 document.addEventListener('DOMContentLoaded', function() {
-    // Get elements
-    const searchBtn = document.getElementById('searchBtn');
-    const searchBox = document.getElementById('searchBox');
-    const searchInput = document.querySelector('#searchBox input');
-    const searchSubmitBtn = document.querySelector('#searchBox button');
-
-    if (!searchBtn || !searchBox || !searchInput || !searchSubmitBtn) return;
-
-    // Toggle search box visibility when clicking search icon
-    searchBtn.addEventListener('click', function(event) {
-        event.stopPropagation();
-        searchBox.classList.toggle('active');
-        if (searchBox.classList.contains('active')) {
-            searchInput.focus();  // Auto-focus the input when opened
-        }
-    });
-
-    // Close search box when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!searchBox.contains(event.target) && event.target !== searchBtn) {
-            searchBox.classList.remove('active');
-        }
-    });
-
-    // Keep the box open when interacting with the input/button themselves
-    searchBox.addEventListener('click', function(event) {
-        event.stopPropagation();
-    });
 
     // Site pages this search can find, keyed by page title + related keywords
     const pageIndex = [
@@ -146,40 +118,70 @@ document.addEventListener('DOMContentLoaded', function() {
         return bestMatch;
     }
 
-    function showSearchMessage(text) {
-        let msg = searchBox.querySelector('.search-box-message');
-        if (!msg) {
-            msg = document.createElement('div');
-            msg.className = 'search-box-message';
-            searchBox.appendChild(msg);
+    // Wires up one search icon + dropdown box (shared by the main header and the sticky header)
+    function setupSearch(btnId, boxId, inputId, submitId) {
+        const searchBtn = document.getElementById(btnId);
+        const searchBox = document.getElementById(boxId);
+        const searchInput = document.getElementById(inputId);
+        const searchSubmitBtn = document.getElementById(submitId);
+
+        if (!searchBtn || !searchBox || !searchInput || !searchSubmitBtn) return;
+
+        function showSearchMessage(text) {
+            let msg = searchBox.querySelector('.search-box-message');
+            if (!msg) {
+                msg = document.createElement('div');
+                msg.className = 'search-box-message';
+                searchBox.appendChild(msg);
+            }
+            msg.textContent = text;
         }
-        msg.textContent = text;
+
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query === '') {
+                showSearchMessage('Please enter a search term.');
+                return;
+            }
+
+            const match = findBestMatch(query);
+            if (match) {
+                window.location.href = match.url;
+            } else {
+                showSearchMessage('No matching page found. Try "admission", "gallery" or "contact".');
+            }
+        }
+
+        // Toggle search box visibility when clicking search icon
+        searchBtn.addEventListener('click', function(event) {
+            event.stopPropagation();
+            searchBox.classList.toggle('active');
+            if (searchBox.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+
+        // Close search box when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!searchBox.contains(event.target) && event.target !== searchBtn) {
+                searchBox.classList.remove('active');
+            }
+        });
+
+        // Keep the box open when interacting with the input/button themselves
+        searchBox.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
+        searchSubmitBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
     }
 
-    // Function to perform search
-    function performSearch() {
-        const query = searchInput.value.trim();
-        if (query === '') {
-            showSearchMessage('Please enter a search term.');
-            return;
-        }
-
-        const match = findBestMatch(query);
-        if (match) {
-            window.location.href = match.url;
-        } else {
-            showSearchMessage('No matching page found. Try "admission", "gallery" or "contact".');
-        }
-    }
-
-    // Search when clicking the Search button
-    searchSubmitBtn.addEventListener('click', performSearch);
-
-    // Search when pressing Enter key
-    searchInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            performSearch();
-        }
-    });
+    setupSearch('searchBtn', 'searchBox', 'searchInput', 'searchSubmit');
+    setupSearch('stickySearchBtn', 'stickySearchBox', 'stickySearchInput', 'stickySearchSubmit');
 });
 
